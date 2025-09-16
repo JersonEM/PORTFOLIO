@@ -5,23 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mi Portafolio</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
   <header>
     <h1>Jerson Y. Elias Mamani</h1>
     <p>Desarrollador Web Junior</p>
+
+    <nav class="menu">
+      <button class="tab-btn active" data-target="sobre-mi">Sobre mí</button>
+      <button class="tab-btn" data-target="experiencia">Experiencia</button>
+      <button class="tab-btn" data-target="habilidades">Habilidades</button>
+      <button class="tab-btn" data-target="educacion">Educación</button>
+      <button class="tab-btn" data-target="contacto">Contacto</button>
+      <button class="tab-btn" data-target="curriculum">Currículum</button>
+    </nav>
   </header>
 
   <main>
-    <section id="sobre-mi">
+    <section id="sobre-mi" class="tab-content active">
       <h2>Sobre mí</h2>
-      <p>Desempleado de dia, Ingeniero de noche</p>
-      <p>Estudio en Ingeniería de Software y diseño gráfico</p>
-      <p>Apasionado por la creación de interfaces y aplicaciones web</p>
-      <p>Disponible para trabajar remoto y en casa</p>
+      <p>Estudiante de Ingeniería de Sistemas y Diseñador Gráfico independiente.</p>
+      <p>Apasionado por el desarrollo web y las interfaces elegantes.</p>
+      <p>Busco oportunidades para crecer y aprender en el campo del desarrollo web.</p>
+      <p>Actualmente explorando Node.js, Astro y UI/UX con Figma.</p>
+      <p>Idiomas: Español (nativo), Inglés (intermedio)</p>
+      <p>Hobbies: Videojuegos, música, lectura, diseño gráfico, maquetacion de libros.</p>
+      <p>Siempre abierto a nuevas experiencias</p>
     </section>
 
-    <section id="contacto">
+    <section id="experiencia" class="tab-content">
+      <h2>Experiencia</h2>
+      <p>He trabajado en proyectos universitarios y personales con tecnologías modernas.</p>
+      <p>Actualmente buscando mi primera experiencia profesional en desarrollo web.</p>
+      <p>Proyectos destacados:</p>
+      <ul>
+        <li>Portafolio personal (HTML, CSS, JavaScript)</li>
+        <li>Blog de tecnología (Astro, Markdown)</li>
+        <li>Pequeñas aplicaciones web con Node.js</li>
+        <li>Digitalización de libros y su respectiva maquetación</li>
+        <li>Impresión artesanal y unión en base a estilo de costuras para libros</li>
+      </ul>
+    </section>
+
+    <section id="habilidades" class="tab-content">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML5, CSS3, JavaScript</li>
+        <li>Node.js, Express, MySQL, Astro</li>
+        <li>Control de versiones con Git y GitHub</li>
+        <li>Diseño gráfico con Adobe Photoshop</li>
+        <li>Diseño UI/UX (Figma, Photoshop, InDesign)</li>
+        <li>Manejo de programas especializados para Investigación Forense</li>
+        <li>Impresión y maquetación artesanal de libros</li>
+        <li>Conocimientos en accesibilidad web</li>
+        <li>Conocimiento en mantenimiento y cuidado de computadoras</li>
+
+      </ul>
+    </section>
+
+    <section id="educacion" class="tab-content">
+      <h2>Educación</h2>
+      <ul>
+        <li>Estudios Básicos - Colegio Juan Pablo II</li>
+        <li>Ingeniería de Sistemas - Universidad Autónoma Tomás Frías</li>
+        <li>Diseño Gráfico - Independiente</li>
+      </ul>
+    </section>
+
+    <section id="contacto" class="tab-content">
       <h2>Contacto</h2>
       <ul>
         <li>Email 1: <a href="mailto:ejersonyannick@yahoo.com">ejersonyannick@yahoo.com</a></li>
@@ -30,10 +82,112 @@
         <li>Telefono: <a>+591 60454623</a></li>
       </ul>
     </section>
+
+    <section id="curriculum" class="tab-content">
+      <h2>Currículum Vitae</h2>
+      <button id="btn-toggle-cv">Mostrar CV</button>
+    </section>
+
+    <section id="cv" style="display: none;">
+      <h2>Mi Currículum Vitae</h2>
+      <button id="btn-print-cv">🖨 Imprimir CV</button>
+      
+      <div class="cv-content">
+        <div class="cv-left">
+          <img src="img/foto.jpg" alt="Foto de Perfil" class="cv-photo" />
+          <h3>Jerson Y. Elias Mamani</h3>
+          <p>Ingeniero de sistemas</p>
+          <p><strong>Email:</strong> ejersonyannick@yahoo.com</p>
+          <p><strong>Teléfono:</strong> +591 60454623</p>
+        </div>
+        <div class="cv-right">
+          <h3>Perfil Profesional</h3>
+          <p>Estudiante de Ingeniería de Sistemas y Diseñador Gráfico independiente con pasión por el desarrollo web y las interfaces elegantes. Busco oportunidades para crecer y aprender en el campo del desarrollo web.</p>
+          
+          <h3>Experiencia</h3>
+          <ul>
+            <li>Proyectos universitarios y personales con tecnologías modernas.</li>
+            <li>Portafolio personal (HTML, CSS, JavaScript)</li>
+            <li>Blog de tecnología (Astro, Markdown)</li>
+            <li>Pequeñas aplicaciones web con Node.js</li>
+            <li>Digitalización y maquetación de libros</li>
+          </ul>
+
+          <h3>Habilidades Técnicas</h3>
+          <ul>
+            <li>HTML5, CSS3, JavaScript</li>
+            <li>Node.js, Express, MySQL, Astro</li>
+            <li>Control de versiones con Git y GitHub</li>
+            <li>Diseño gráfico con Adobe Photoshop</li>
+            <li>Diseño UI/UX (Figma, Photoshop, InDesign)</li>
+            <li>Manejo de programas especializados para Investigación Forense</li>
+            <li>Impresión y maquetación artesanal de libros</li>
+            <li>Conocimientos en accesibilidad web</li>
+            <li>Mantenimiento y cuidado de computadoras</li>
+          </ul>
+
+          <h3>Educación</h3>
+          <ul>
+            <li>Colegio Juan Pablo II - Estudios Básicos</li>
+            <li>Universidad Autónoma Tomás Frías - Ingeniería de Sistemas (En curso)</li>
+            <li>Diseño Gráfico - Independiente</li>
+          </ul>
+
+          <h3>Idiomas</h3>
+          <ul>
+            <li>Español (Nativo)</li>
+            <li>Inglés (Intermedio)</li>
+          </ul>
+
+          <h3>Hobbies e Intereses</h3>
+          <p>Videojuegos, música, lectura, diseño gráfico, maquetación de libros. Siempre abierto a nuevas experiencias.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Jerson</p>
   </footer>
+
+  <script>
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+  const btnToggleCV = document.getElementById("btn-toggle-cv");
+  const cvSection = document.getElementById("cv");
+  const btnPrintCV = document.getElementById("btn-print-cv");
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      tabButtons.forEach((btn) => btn.classList.remove("active"));
+      tabContents.forEach((content) => content.classList.remove("active"));
+
+      button.classList.add("active");
+      const target = document.getElementById(button.dataset.target);
+      if (target) target.classList.add("active");
+    });
+  });
+  btnToggleCV.addEventListener("click", () => {
+    if (cvSection.style.display === "none" || cvSection.style.display === "") {
+      cvSection.style.display = "block";
+      btnToggleCV.textContent = "Ocultar CV";
+      cvSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      cvSection.style.display = "none";
+      btnToggleCV.textContent = "Mostrar CV";
+    }
+  });
+  btnPrintCV.addEventListener("click", () => {
+    const cvContent = document.querySelector(".cv-content");
+    const options = {
+      margin: 0.5,
+      filename: 'Curriculum_Vitae_Jerson_Elias.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(options).from(cvContent).save();
+  });
+</script>
+
 </body>
 </html>
